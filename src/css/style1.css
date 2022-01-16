@@ -1,0 +1,319 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+/* custom properties, update these for your own design. this allows the items in page is adjusted by page size changes.*/
+:root{
+    --ff--primary: 'Source Sans Pro', 'sans-serif'; 
+    --ff--secondary: 'Source Code Pro', 'monospace';
+/* font familiy (ff) and font weight and wide */
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #e01616;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0, 0.25),
+           0.125em 0.125em 0.25em rgba(0,0,0, 0.15);
+
+}
+.intro--img{
+    box-shadow: var(--bs);
+}
+.section--subtitle--intro{
+    display:inline-block ;
+}
+@media (min-wide: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body:1.125rem;
+  }
+}
+/* General styles */
+/* html {
+    scroll-behavior: smooth;
+} */
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff--primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    }
+section {
+    padding: 5em, 2em;
+}
+img{
+    display:block;
+    max-width: 100%;
+    }
+strong { font-weight: var(--fw-bold)}
+
+
+.btn{
+    display: inline-block;
+    padding: .5em 2.5em;
+    margin-bottom: 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+.btn:hover {
+    transform: scale(1.1);
+}
+/* typogeography */
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+h1 {font-size: var(--fs-h1)}
+h2 {font-size: var(--fs-h2)}
+h3 {font-size: var(--fs-h3)}
+
+.section--title{
+    margin-bottom: 0.25em;
+}
+.section--title--intro {
+    margin-top: 25px;
+    font-weight: var(--fw-reg);
+}
+.section--title--intro strong{
+    display:block;
+}
+
+.section--subtitle{
+    margin: 0;
+    font-size: var(--fs-h3);
+
+}
+.section--subtitle--intro,
+.section--subtitle--about{
+    background: var(--clr-accent) ;
+    /* font in the box */
+    padding: 0.25em 1em;
+    font-family: var(--ff--secondary);
+    margin-bottom: 1em;
+}
+
+/* .section--title--myWork{
+
+} */
+
+.section--subtitle--myWork {
+    color:var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 1em;
+}
+
+/* header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    /* width: 100%; */
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.intro{
+    position: relative;
+
+}
+@media (min-width:600px){
+    .intro {
+        display: grid;
+        /* both */
+        width: min-content;
+        margin: 0 auto;
+        /* both */
+        grid-column-gap: 1em ;
+        grid-template-areas: 
+        "img title"
+        "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+ .intro--img{
+     margin-top: 25px;
+        grid-area: img;
+        min-width: 250px;
+        position:relative;
+        z-index: 2;
+        margin-bottom: 3em;
+    }
+ .section--subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        /* three */
+        position: relative;
+        left: -1.5em;
+        width:calc(100% + 1.5em)
+    }
+}
+
+.about-me{
+    max-width: 1000px ;
+    margin: 0px auto;
+    }
+.about-me p { 
+    width: 870px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: justify;
+    /* text-justify: inter-word; */
+}
+.about-me--img{
+    box-shadow: var(--bs);
+}
+@media (min-width:600px){
+    .about-me{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas:
+         "title img"
+         "subtitle img"
+         "text img";
+      }
+    .section--title--about{
+        grid-area: title;
+    }
+
+    .section--subtitle--about{
+        grid-column: 1/ -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc (200px + 4em);
+
+    }
+  
+    .about-me--img{
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+
+}
+
+/* mywork */
+.my--work {
+    position: relative;
+    height: 700p;
+    padding-top: 1rem;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+.portfolio {
+    
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.portfolio--item{
+    background: var(--clr-accent);
+    overflow: hidden;
+}
+.portfolio--img{
+    transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1),
+    opacity 250ms linear;
+}
+
+.portfolio--item:focus{
+    position: relative;
+    z-index: 2;
+}
+.portfolio--img:hover,
+.portfolio--item:focus .portfolio--img {
+    transform: scale(1.2);
+    opacity: .5;
+}
+
+/* footer */
+
+.footer{
+    height: 200px;
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em, 0;
+    font-size: var(--fs-h3);
+   }
+
+.footer a{
+    padding: 2px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+.footer--link {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-bold);
+}
+
+
+.footer--link:hover,
+.social--list--link:hover{
+    opacity: 0.7 ;
+}
+
+.footer--link:hover{
+    text-decoration: underline;
+}
+
+.social--list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding-left: 150px;
+    
+}
+
+.social--list--item a {
+    margin-right:150px;
+}
+
+.fig{
+    text-align: center;
+    
+}
+.microServices {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.about-me__scripts{
+    margin-left: 200px;
+}
+
+.about-me__body {
+    margin-left: 50px;
+}
+
+

@@ -1,0 +1,128 @@
+.App-logo{
+  margin: 0;
+  padding: 0;
+  height: 7vmin;
+  pointer-events: none;
+  display: inline;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 10s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.navbar{
+  border-bottom: 1px solid #f2f2f2;
+
+}
+
+.linksDiv {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 17px;
+}
+
+.map-components {
+  display: grid;
+  grid-template-columns: 400px auto;
+}
+
+.map-container {
+  display: flex;
+  background-color: #282c34;
+  min-height: 100vh;
+  min-width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  float: right;
+}
+
+.nav-sidebar{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+ }
+
+ .searchBar, .inputs{
+  margin: 10px 30px;
+  height: 70px;
+ }
+
+.resultList{ 
+  height: 400px;
+  overflow:auto;
+  overflow-x: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+   }
+
+.form-control-search {
+  width: 250px;
+  height: 35px;
+  border-radius: 50px ;
+  box-shadow: inset 0 0 5px black;
+  border: none;
+}
+
+.form-control {
+  height: 35px;
+}
+
+.form-control-submit {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  color:blanchedalmond;
+  background-color:  #2f74c0;
+  font-size: 15px;
+  box-shadow: 0 0 10px black;
+  margin: 0 15px;
+  border: none;
+}
+
+.form-control-submit:hover {
+    background-color:  #6a9bd0;  
+    cursor: pointer;
+  }
+
+.ol-zoom-in {
+height: 2.2em;
+width: 2.2em;
+font-weight: bold;
+box-shadow: 0px 5px 5px #888888;
+
+}
+
+.ol-zoom-out {
+height: 2.2em;
+width: 2.2em;
+font-weight: bold;
+box-shadow: 0px 5px 5px #888888;
+}
+
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+
+.blog-preview h5:hover {
+  cursor: pointer;
+}
